@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -59,7 +60,9 @@ export class Login extends React.Component { // eslint-disable-line react/prefer
                     type='password'
                   />
 
-                  <Button color='teal' fluid size='large'>Login</Button>
+                  <Link to={'/home'}>
+                    <Button color='teal' fluid size='large'>Login</Button>
+                  </Link>
                 </Segment>
               </Form>
               <Message>

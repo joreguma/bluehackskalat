@@ -5,6 +5,8 @@
 */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   Container, Divider, Dropdown, Grid, Header, Icon, Image, List, Menu, Segment, Visibility,
 } from 'semantic-ui-react'
@@ -48,24 +50,6 @@ const fixedOverlayMenuStyle = {
   left: '800px',
 }
 
-const LeftImage = () => (
-  <Image
-    floated='left'
-    size='medium'
-    src='/assets/images/wireframe/square-image.png'
-    style={{ margin: '2em 2em 2em -4em' }}
-  />
-)
-
-const RightImage = () => (
-  <Image
-    floated='right'
-    size='medium'
-    src='/assets/images/wireframe/square-image.png'
-    style={{ margin: '2em -4em 2em 2em' }}
-  />
-) 
-
 class HeaderComponent extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   state = {
     menuFixed: false,
@@ -101,31 +85,14 @@ class HeaderComponent extends React.PureComponent { // eslint-disable-line react
             style={menuFixed ? fixedMenuStyle : menuStyle}
           >
             <Container text>
-              <Menu.Item>
+              <Menu.Item link><NavLink to={'/'}>
                 <Image size='mini' src='https://instrumentalfx.co/wp-content/uploads/2018/01/Uganda-Knuckles-300x300.jpg' />
-              </Menu.Item>
-              <Menu.Item header>Home</Menu.Item>
-              <Menu.Item as='a'>Discover</Menu.Item>
-              <Menu.Item as='a'>Do Tasks</Menu.Item>
+                </NavLink></Menu.Item>
+              <Menu.Item link><NavLink to={'/discover'}>Discover</NavLink></Menu.Item>
+              <Menu.Item link><NavLink to={'/tasks'}>Do Tasks</NavLink></Menu.Item>
 
               <Menu.Menu position='right'>
-                <Dropdown text='Dropdown' pointing className='link item'>
-                  <Dropdown.Menu>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Header>Header Item</Dropdown.Header>
-                    <Dropdown.Item>
-                      <i className='dropdown icon' />
-                      <span className='text'>Submenu</span>
-                      <Dropdown.Menu>
-                        <Dropdown.Item>List Item</Dropdown.Item>
-                        <Dropdown.Item>List Item</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown.Item>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
+              <Menu.Item link><NavLink to={'/'}>Logout</NavLink></Menu.Item>
               </Menu.Menu>
             </Container>
           </Menu>

@@ -14,17 +14,20 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import HeaderComponent from '../../components/HeaderComponent';
+import HeaderComponent from '../../components/HeaderComponent/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
+import DiscoverPage from 'containers/DiscoverPage/Loadable';
 import Login from 'containers/Login/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import { Container } from 'semantic-ui-react'
 
 export default function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/" render={() => <div><HeaderComponent /><HomePage /></div>}/>
-        <Route exact path="/login" render={() => <Login />}/>
+        <Route exact path="/" render={() => <Login />}/>
+        <Route exact path="/home" render={() => <div><HeaderComponent /><Container><HomePage /></Container></div>}/>
+        <Route exact path="/discover" render={() => <div><HeaderComponent /><Container><DiscoverPage /></Container></div>}/>
         <Route component={NotFoundPage} />
 
       </Switch>
