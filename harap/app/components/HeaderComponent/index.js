@@ -85,14 +85,14 @@ class HeaderComponent extends React.PureComponent { // eslint-disable-line react
             style={menuFixed ? fixedMenuStyle : menuStyle}
           >
             <Container text>
-              <Menu.Item link><NavLink to={'/'}>
-                <Image size='mini' src='https://instrumentalfx.co/wp-content/uploads/2018/01/Uganda-Knuckles-300x300.jpg' />
+              <Menu.Item link><NavLink to={'/home'}>
+                <Image size='mini' src='https://www.fitbit.com/content/assets/app2/images/fitbit_logo_icon.svg' />
                 </NavLink></Menu.Item>
-              <Menu.Item link><NavLink to={'/discover'}>Discover</NavLink></Menu.Item>
-              <Menu.Item link><NavLink to={'/tasks'}>Do Tasks</NavLink></Menu.Item>
+              <Menu.Item link><NavLink to={'/discover'} style={{color: "black"}}>Discover</NavLink></Menu.Item>
+              <Menu.Item link><NavLink to={'/tasks'} style={{color: "black"}}>Do Tasks</NavLink></Menu.Item>
 
               <Menu.Menu position='right'>
-              <Menu.Item link><NavLink to={'/'}>Logout</NavLink></Menu.Item>
+              <Menu.Item link><NavLink to={'/'} style={{color: "black"}}>Logout</NavLink></Menu.Item>
               </Menu.Menu>
             </Container>
           </Menu>

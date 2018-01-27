@@ -22,6 +22,9 @@ import App from 'containers/App';
 // Import Semantic UI CSS Package
 import 'semantic-ui-css/semantic.min.css';
 
+// Import React Responsive Carousel
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
 

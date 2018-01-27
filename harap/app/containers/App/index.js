@@ -17,7 +17,9 @@ import { Switch, Route } from 'react-router-dom';
 import HeaderComponent from '../../components/HeaderComponent/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import DiscoverPage from 'containers/DiscoverPage/Loadable';
+import TasksPage from 'containers/TasksPage/Loadable';
 import Login from 'containers/Login/Loadable';
+import Group from 'containers/Group/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import { Container } from 'semantic-ui-react'
 
@@ -28,8 +30,9 @@ export default function App() {
         <Route exact path="/" render={() => <Login />}/>
         <Route exact path="/home" render={() => <div><HeaderComponent /><Container><HomePage /></Container></div>}/>
         <Route exact path="/discover" render={() => <div><HeaderComponent /><Container><DiscoverPage /></Container></div>}/>
+        <Route path="/discover/:name" render={() => <div><HeaderComponent /><Container><Group /></Container></div>}/>
+        <Route exact path="/tasks" render={() => <div><HeaderComponent /><Container><TasksPage /></Container></div>}/>
         <Route component={NotFoundPage} />
-
       </Switch>
     </div>
   );
